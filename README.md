@@ -2,10 +2,12 @@
 
 > A geospatial **liveability index** for Greater Melbourne: real suburb boundaries fused with multi-source signals into a **PCA-weighted composite score** across 8 dimensions, shown on an **interactive Folium choropleth** with user-adjustable weights.
 
+[![CI](https://github.com/Sanny-Un-Sowadh-Wamik/melbourne-liveability/actions/workflows/ci.yml/badge.svg)](https://github.com/Sanny-Un-Sowadh-Wamik/melbourne-liveability/actions/workflows/ci.yml)
 ![Python](https://img.shields.io/badge/python-3.11-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
+[![Live Demo](https://img.shields.io/badge/%F0%9F%A4%97%20Live%20Demo-online-success)](https://sanny2005-melbourne-liveability.hf.space)
 
-**🔴 Live demo:** _added after deploy_ (Hugging Face Space)
+**🔴 Live demo (no login):** **[▶ Open the interactive map](https://sanny2005-melbourne-liveability.hf.space)** — Hugging Face Space _(methodology prototype — see Results)_
 
 ---
 
