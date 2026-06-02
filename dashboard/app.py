@@ -64,23 +64,23 @@ theme.hero(
     tag="GEOSPATIAL · PCA · INTERACTIVE",
 )
 
-with st.sidebar:
-    st.markdown("### ⚙️ Build your score")
-    real_only = st.toggle(
-        "Real signals only",
+with st.expander("⚙️  Build your score  ·  dimension weights", expanded=True):
+    hc1, hc2 = st.columns([3, 1])
+    real_only = hc1.toggle(
+        "Real signals only (coherent ranking)",
         value=True,
         help="Use only the geometry-derived dimensions (transport, walkability, affordability) for a coherent map. "
         "Turn off to include the modelled placeholders.",
     )
+    hc2.metric("PCA var.", f"{META['pca_explained_variance'] * 100:.0f}%")
     st.caption("Weights default to PCA. ✅ real · 〜 modelled")
+    wcols = st.columns(4)
     weights = {}
-    for d in dims:
+    for i, d in enumerate(dims):
         is_mod = d in modelled
         disabled = real_only and is_mod
         default = 0.0 if disabled else float(pca_w.get(d, 0.125))
-        weights[d] = st.slider(f"{'〜' if is_mod else '✅'} {d}", 0.0, 1.0, default, 0.01, disabled=disabled)
-    st.markdown("---")
-    st.metric("PCA explained variance", f"{META['pca_explained_variance'] * 100:.0f}%")
+        weights[d] = wcols[i % 4].slider(f"{'〜' if is_mod else '✅'} {d}", 0.0, 1.0, default, 0.01, disabled=disabled)
 
 g = GDF.copy()
 g["liveability"] = composite_score(g, dims, weights).round(1)
