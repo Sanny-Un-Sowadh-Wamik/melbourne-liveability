@@ -59,9 +59,7 @@ def _stage(stage: Path) -> int:
     stage.mkdir(parents=True)
     for d in ("dashboard", "src", "config"):
         shutil.copytree(ROOT / d, stage / d)
-    (stage / "data" / "sample").mkdir(parents=True)
-    for f in ("melbourne_liveability.geojson", "metadata.json"):
-        shutil.copy(ROOT / "data" / "sample" / f, stage / "data" / "sample" / f)
+    shutil.copytree(ROOT / "data" / "sample", stage / "data" / "sample")
     shutil.copy(ROOT / "requirements.txt", stage / "requirements.txt")
     (stage / "README.md").write_text(FRONTMATTER)
     (stage / "Dockerfile").write_text(DOCKERFILE)

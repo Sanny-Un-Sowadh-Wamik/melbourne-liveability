@@ -3,6 +3,7 @@
 streamlit>=1.50
 streamlit-folium>=0.21
 folium>=0.16
+plotly>=5.20
 branca>=0.7
 mapclassify>=2.6
 geopandas>=0.14
