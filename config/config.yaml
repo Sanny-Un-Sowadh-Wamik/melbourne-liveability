@@ -1,0 +1,25 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Melbourne liveability configuration.
+# ─────────────────────────────────────────────────────────────────────────────
+project_name: melbourne-liveability
+
+data:
+  # Real Victorian suburb boundaries (keyless GeoJSON).
+  boundaries_url: "https://raw.githubusercontent.com/tonywr71/GeoJson-Data/master/suburb-2-vic.geojson"
+  cbd_lat: -37.8136          # Melbourne CBD (Flinders St)
+  cbd_lon: 144.9631
+  max_cbd_km: 25             # keep suburbs within 25 km of the CBD ≈ Greater Melbourne
+  random_state: 42
+
+# Eight liveability dimensions combined into a PCA-weighted composite index.
+scoring:
+  dimensions:
+    - transport          # PT stop density / proximity
+    - walkability        # amenities within walking distance
+    - green_space        # parks area & proximity
+    - safety             # inverse crime proxy
+    - affordability      # inverse median rent proxy
+    - education          # schools nearby
+    - health             # GPs / hospitals / pharmacies nearby
+    - demographics       # diversity / employment proxy
+  pca_components: 1

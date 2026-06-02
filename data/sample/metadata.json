@@ -1,0 +1,41 @@
+{
+  "n_suburbs": 260,
+  "dimensions": [
+    "transport",
+    "walkability",
+    "green_space",
+    "safety",
+    "affordability",
+    "education",
+    "health",
+    "demographics"
+  ],
+  "pca_explained_variance": 0.418,
+  "pca_weights": {
+    "transport": 0.248,
+    "walkability": 0.237,
+    "green_space": 0.028,
+    "safety": 0.21,
+    "affordability": 0.248,
+    "education": 0.012,
+    "health": 0.006,
+    "demographics": 0.011
+  },
+  "osm_pois_available": false,
+  "modelled_dimensions": [
+    "green_space",
+    "education",
+    "health",
+    "safety",
+    "demographics"
+  ],
+  "real_dimensions": [
+    "transport",
+    "walkability",
+    "affordability"
+  ],
+  "cbd": [
+    -37.8136,
+    144.9631
+  ]
+}
